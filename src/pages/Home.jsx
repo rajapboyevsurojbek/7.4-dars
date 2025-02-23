@@ -70,35 +70,35 @@ const Home = () => {
             ref={title}
             className="border pl-2 outline-indigo-900"
             type="text"
-            placeholder="title"
+            placeholder="Marka"
           />
           <input
             required
             ref={desc}
             className="border pl-2 outline-indigo-900"
             type="text"
-            placeholder="description"
+            placeholder="Marka nomi"
           />
           <input
             required
             ref={auther}
             className="border pl-2 outline-indigo-900"
             type="text"
-            placeholder="auther"
+            placeholder="Yil"
           />
           <input
             required
             ref={type}
             className="border pl-2 outline-indigo-900"
             type="text"
-            placeholder="type"
+            placeholder="Bosib otilgan yo'l"
           />
           <input
             required
             ref={soldCount}
             className="border pl-2 outline-indigo-900"
             type="text"
-            placeholder="soldCount"
+            placeholder="Holati"
           />
           <button
             disabled={isCreateLoading}
@@ -114,12 +114,15 @@ const Home = () => {
         {data?.map((blog) => (
           <div className="shadow p-4 rounded" key={blog.id}>
             <h3 className="text-xl font-bold pb-3 mb-3 border-b border-gray-200">
-              {blog.title}
+              Marka: {blog.title}
             </h3>
-            <p>{blog.desc}</p>
-            <h2>{blog.type}</h2>
-            <h2>{blog.auther}</h2>
-            <h2>{blog.soldCount}</h2>
+            <p className="pb-1 text-gray-600"> Marka nomi: {blog.desc}</p>
+            <h2 className="pb-1 text-gray-600"> Yil: {blog.type}</h2>
+            <h2 className="pb-1 text-gray-600">
+              {" "}
+              Bosib o'tilgan yo'l: {blog.auther}
+            </h2>
+            <h2 className="pb-1 text-gray-600"> Holati: {blog.soldCount}</h2>
             <button
               onClick={() => handleDeleteBlog(blog.id)}
               className="bg-red-500 text-white text-sm px-3 cursor-pointer p-2.5 rounded-2xl mr-1.5 mt-2"
